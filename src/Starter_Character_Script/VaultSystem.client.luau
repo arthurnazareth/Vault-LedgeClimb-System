@@ -13,7 +13,7 @@ local vaultAvaliable = true
 
 while game:GetService("RunService").RenderStepped:Wait() do
 	local r = Ray.new(charRoot.Position, charRoot.CFrame.LookVector * 7 + charRoot.CFrame.UpVector * -5)
-	local part = workspace:FindPartOnRay(r,char)
+	local part = workspace:FindPartOnRay(r,playerCharacter)
 
 	if part and ledgeAvaliable then
 		if part.Name == "Vault" then
