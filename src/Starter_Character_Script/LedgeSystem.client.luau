@@ -40,3 +40,15 @@ function climb()
     ledgeAvaliable = true
 end
 
+UIS.InputBegan:Connect(function(Key, Chat)
+    if not isHolding then return end
+    if Key.KeyCode == Enum.KeyCode.Space and not Chat then
+        climb()
+    end
+end)
+
+if touchGUI then
+    touchGUI:WaitForChild("TouchControlFrame"):WaitForChild("JumpButtonn").MouseButton1Click:Connect(function()
+        if not isHolding then return end climb()
+    end)
+end
