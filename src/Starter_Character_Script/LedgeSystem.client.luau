@@ -27,3 +27,16 @@ while game:GetService("RunService").Heartbeat:Wait() do
         end
     end
 end
+
+function climb()
+    local Velo = Instance.new("BodyVelocity", charRoot)
+    charRoot.Anchored = false
+    Velo.MaxForce = Vector3.new(1,1,1) * math.huge
+    Velo.Velocity = charRoot.CFrame.LookVector * 10 + Vector3.new(0, 30, 0)
+    animHold:Stop() animClimb:Play()
+    game.Debris:AddItem(Velo,.15)
+    isHolding = false
+    wait(.75)
+    ledgeAvaliable = true
+end
+
